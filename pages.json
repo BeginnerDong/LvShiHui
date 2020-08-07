@@ -1,0 +1,207 @@
+{
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "首页",//设置页面标题文字
+				"onReachBottomDistance":100,
+				"navigationStyle":"custom",
+				"navigationBarTextStyle":"white"
+			}
+		}
+        ,{
+            "path" : "pages/sreach/sreach",
+            "style" : {
+							"navigationBarTitleText": "搜索商品"
+						}
+        }
+        ,{
+            "path" : "pages/index-equity/index-equity",
+            "style" : {
+							"navigationStyle":"custom",
+							"navigationBarTextStyle":"white"
+						}
+        }
+        
+        ,{
+            "path" : "pages/index-address/index-address",
+            "style" : {
+							"navigationBarTitleText": "选择地址"
+						}
+        }
+        ,{
+            "path" : "pages/index-vipApply/index-vipApply",
+            "style" : {
+							"navigationBarTitleText": "会员申请",
+							"navigationBarTextStyle": "white",
+							"navigationBarBackgroundColor": "#2A2C49",
+							"navigationStyle":"custom"
+						}
+        }
+        ,{
+            "path" : "pages/index-agreement/index-agreement",
+            "style" : {
+							"navigationBarTitleText": "会员协议"
+						}
+        }
+        ,{
+            "path" : "pages/paySuccess/paySuccess",
+            "style" : {
+							"navigationBarTitleText": "支付成功"
+						}
+        }
+        ,{
+            "path" : "pages/authentication/authentication",
+            "style" : {
+							"navigationBarTitleText": "实名认证"
+						}
+        }
+        ,{
+            "path" : "pages/myVip/myVip",
+            "style" : {
+							"navigationStyle":"custom"
+						}
+        }
+        ,{
+            "path" : "pages/goodsDetail/goodsDetail",
+            "style" : {
+							"navigationStyle":"custom"
+						}
+        }
+        ,{
+            "path" : "pages/orderDetail/orderDetail",
+            "style" : {
+							"navigationBarTitleText": "订单详情"
+						}
+        }
+        ,{
+            "path" : "pages/addAddress/addAddress",
+            "style" : {
+							"navigationBarTitleText": "添加地址"
+						}
+        }
+        ,{
+            "path" : "pages/allGoods/allGoods",
+            "style" : {
+							"navigationBarTitleText": "全部商品"
+						}
+        }
+        ,{
+            "path" : "pages/car/car",
+            "style" : {
+							"navigationStyle":"custom"
+						}
+        }
+        ,{
+            "path" : "pages/user/user",
+            "style" : {
+							"navigationBarTitleText": "我的"
+						}
+        }
+        ,{
+            "path" : "pages/user-order/user-order",
+            "style" : {
+							"navigationBarTitleText": "我的订单"
+						}
+        }
+        ,{
+            "path" : "pages/user-orderDetail/user-orderDetail",
+            "style" : {
+							"navigationBarTitleText": "订单详情",
+							"navigationBarBackgroundColor": "#F87F27",
+							"navigationBarTextStyle": "white"
+						}
+        }
+        ,{
+            "path" : "pages/user-wallet/user-wallet",
+            "style" : {
+							"navigationBarTitleText": "我的钱包",
+							"navigationBarBackgroundColor": "#F87F27",
+							"navigationBarTextStyle": "white"
+						}
+        }
+        ,{
+            "path" : "pages/user-extend/user-extend",
+            "style" : {
+							"navigationBarTitleText": "推广返佣"
+						}
+        }
+        ,{
+            "path" : "pages/user-tixianRecord/user-tixianRecord",
+            "style" : {
+							"navigationBarTitleText": "提现记录"
+						}
+        }
+        ,{
+            "path" : "pages/user-refund/user-refund",
+            "style" : {
+							"navigationBarTitleText": "买铝返钱"
+						}
+        }
+        ,{
+            "path" : "pages/user-tixianApply/user-tixianApply",
+            "style" : {
+							"navigationBarTitleText": "提现申请"
+						}
+        }
+        ,{
+            "path" : "pages/user-invitation/user-invitation",
+            "style" : {
+							"navigationStyle":"custom"
+						}
+        }
+        ,{
+            "path" : "pages/user-coupon/user-coupon",
+            "style" : {
+							"navigationBarTitleText": "优惠券"
+						}
+        }
+        ,{
+            "path" : "pages/user-realName/user-realName",
+            "style" : {
+							"navigationBarTitleText": "实名认证"
+						}
+        }
+        ,{
+            "path" : "pages/user-aboutUs/user-aboutUs",
+            "style" : {
+							"navigationBarTitleText": "关于我们",
+							"navigationBarBackgroundColor": "#213062",
+							"navigationBarTextStyle": "white"
+						}
+						
+        }
+        ,{
+            "path" : "pages/user-setting/user-setting",
+            "style" : {
+							"navigationBarTitleText": "设置"
+						}
+        }
+        ,{
+            "path" : "pages/address/address",
+            "style" : {
+							"navigationBarTitleText": "收货地址"
+						}
+        }
+        ,{
+            "path" : "pages/user-phone/user-phone",
+            "style" : {
+							"navigationBarTitleText": "修改手机号"
+						}
+        }
+    ],
+	"globalStyle": {
+		//"navigationStyle":"custom",
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "",
+		"navigationBarBackgroundColor": "#FFFFFF"
+	},
+	"condition": { //模式配置，仅开发期间生效
+		"current": 0, //当前激活的模式(list 的索引项)
+		"list": [{
+			"name": "", //模式名称
+			"path": "", //启动页面，必选
+			"query": "" //启动参数，在页面的onLoad函数里面得到
+		}]
+	}
+}
