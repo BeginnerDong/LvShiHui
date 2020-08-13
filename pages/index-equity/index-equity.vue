@@ -7,7 +7,7 @@
 		</view>
 		
 		<view class="p-aXY">
-			<view class="p-aX colorf font-36 font-w text-center head" :style="{paddingTop:statusBar+'px'}">
+			<view class="p-aX colorf font-38 text-center head" :style="{paddingTop:statusBar+'px'}">
 				<view class="p-3 p-a left-0"@click="Router.back({route:{path:-1}})">
 					<image src="../../static/images/back.png" class="back"></image>
 				</view>

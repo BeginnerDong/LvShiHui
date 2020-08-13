@@ -9,8 +9,7 @@
 			<view class="li" :class="liCurr==4?'on':''" @click="changeLi(4)">已收货</view>
 		</view>
 		
-		<view class="bg-white mb-2" 
-		@click="Router.navigateTo({route:{path:'/pages/user-orderDetail/user-orderDetail'}})">
+		<view class="bg-white mb-2" >
 			<view class="flex1 pt-4 pb-3 bB-f5 mx-3 font-32">
 				<view class="flex">
 					<image src="../../static/images/order-icon1.png" class="dp-icon mr-1"></image>
@@ -18,7 +17,8 @@
 				</view>
 				<view class="colorM font-30">买家代付款</view>
 			</view>
-			<view class="py-3 flex ml-3 pr-3 flex-1 bB-f5">
+			<view class="py-3 flex ml-3 pr-3 flex-1 bB-f5"
+			@click="Router.navigateTo({route:{path:'/pages/user-orderDetail/user-orderDetail'}})">
 				<image src="../../static/images/detail-img.jpg" class="wh190 radius30"></image>
 				<view class="flex5 font-28 pl-2 py-1 flex-1 ggtxt">
 					<view class="avoidOverflow2">专业铝盒定制 螺旋纹原型铝罐 发的时间悬念鲸 97852</view>

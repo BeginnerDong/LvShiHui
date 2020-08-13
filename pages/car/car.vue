@@ -7,15 +7,15 @@
 		</view>
 		
 		<!-- 空数据展示 -->
-		<!-- <view class="p-fXY bg-f7">
+		<view class="p-fXY bg-f7">
 			<image src="../../static/images/car-icon.png" class="nullImg"></image>
-			<view class="fot-34 color8 text-center pt-5">购物车暂无商品</view>
+			<view class="font-34 color8 text-center pt-5">购物车暂无商品</view>
 			<view class="btnB">去逛逛</view>
-		</view> -->
+		</view>
 		
-		<view class="px-3">
+		<!-- <view class="px-3">
 			<view class="flex1 bB-f5">
-				<!-- <image src="../../static/images/car-icon1.png" class="wh30"></image> -->
+				<image src="../../static/images/car-icon1.png" class="wh30"></image>
 				<image src="../../static/images/car-icon3.png" class="wh30"></image>
 				<view class="py-3 flex ml-3 flex-1">
 					<image src="../../static/images/detail-img.jpg" class="wh190 radius30"></image>
@@ -29,7 +29,7 @@
 					</view>
 				</view>
 			</view>
-		</view>
+		</view> -->
 		
 		
 		<view style="height: 244rpx;"></view>
@@ -45,15 +45,15 @@
 		<!-- footer -->
 		<view class="footer">
 			<view class="item" @click="Router.redirectTo({route:{path:'/pages/index/index'}})">
-				<image src="../../static/images/nabar1.png" mode=""></image>
+				<view class="footIcon"><image src="../../static/images/nabar1.png" mode=""></image></view>
 				<view>商城</view>
 			</view>
 			<view class="item on">
-				<image src="../../static/images/nabar2-a.png" mode=""></image>
+				<view class="footIcon"><image src="../../static/images/nabar2-a.png" class="onFootIcon"></image></view>
 				<view>购物车</view>
 			</view>
 			<view class="item" @click="Router.redirectTo({route:{path:'/pages/user/user'}})">
-				<image src="../../static/images/nabar3.png" mode=""></image>
+				<view class="footIcon"><image src="../../static/images/nabar3.png" mode=""></image></view>
 				<view>我的</view>
 			</view>
 		</view>
@@ -84,7 +84,7 @@
 
 <style scoped>
 .h100{line-height: 100rpx;}
-.nullImg{width: 305rpx;height: 331rpx;margin: 30% auto 0;}
+.nullImg{width: 305rpx;height: 331rpx;margin: 40% auto 0;}
 .btnB{width: 280rpx;margin-top: 20%;}
 .btnM{width: 205rpx;line-height: 94rpx;border-radius: 47rpx;margin: 0;}
 

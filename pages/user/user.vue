@@ -15,13 +15,14 @@
 				<image src="../../static/images/user.png" class="userImg"></image>
 			</view>
 			<view class="p-r overflow-h mt-2">
-				<image src="../../static/images/store-img2.png" class="bgImg"></image>
+				<image src="../../static/images/card3.png" class="bgImg"></image>
 				<view class="p-r pt-4 px-3 flex1 vipCon1">
 					<view class="line-h">
 						<view class="font-40 colorf">超级会员</view>
 						<view class="colorZ pt-2">8大尊贵特权</view>
 					</view>
-					<view class="vipBtn">申请会员</view>
+					<view class="vipBtn"
+					@click="Router.navigateTo({route:{path:'/pages/index-vipApply/index-vipApply'}})">申请会员</view>
 				</view>
 			</view>
 		</view>
@@ -68,7 +69,7 @@
 		
 		<view class="bg-white mt-2 px-4 py-3 flex1">
 			<view class="p-r" @click="Router.navigateTo({route:{path:'/pages/user-invitation/user-invitation'}})">
-				<image src="../../static/images/my-img1.png" class="bgImg3"></image>
+				<image src="../../static/images/my-img2.png" class="bgImg3"></image>
 				<view class="p-aXY p-3">
 					<view class="font-32 pb-2">邀请好友</view>
 					<view class="color8">成功邀请<text class="color3">0</text>人</view>
@@ -78,7 +79,7 @@
 				<image src="../../static/images/my-img1.png" class="bgImg3"></image>
 				<view class="p-aXY p-3">
 					<view class="font-32 pb-2">在线客服</view>
-					<view class="color8">24小时在线</view>
+					<view class="color8 font-28">24小时在线</view>
 				</view>
 			</button>
 		</view>
@@ -111,15 +112,15 @@
 		<!-- footer -->
 		<view class="footer">
 			<view class="item" @click="Router.redirectTo({route:{path:'/pages/index/index'}})">
-				<image src="../../static/images/nabar1.png" mode=""></image>
+				<view class="footIcon"><image src="../../static/images/nabar1.png" mode=""></image></view>
 				<view>商城</view>
 			</view>
 			<view class="item" @click="Router.redirectTo({route:{path:'/pages/car/car'}})">
-				<image src="../../static/images/nabar2.png" mode=""></image>
+				<view class="footIcon"><image src="../../static/images/nabar2.png" mode=""></image></view>
 				<view>购物车</view>
 			</view>
 			<view class="item on">
-				<image src="../../static/images/nabar3-a.png" mode=""></image>
+				<view class="footIcon"><image src="../../static/images/nabar3-a.png" class="onFootIcon"></image></view>
 				<view>我的</view>
 			</view>
 		</view>
@@ -147,7 +148,7 @@ page{background-color: #F7F9FB;}
 .userImg{width: 142rpx;height: 142rpx;border-radius: 50%;}
 .bgImg{width: 670rpx;height: 340rpx;position: absolute;top: 0;bottom: 0;right: 0;left: 0; margin: 0 auto;}
 .vipBtn{width: 166rpx;line-height: 54rpx;text-align: center;background: #BC9667;color: #FDECDB;border-radius: 27rpx;}
-.vipCon1{padding-bottom: 66rpx;}
+.vipCon1{padding-bottom: 57rpx;}
 .vip{width: 137rpx;height: 52rpx;}
 .myIcon{width: 105rpx;height: 106rpx;}
 .bgImg2{width: 670rpx;height: 290rpx;}

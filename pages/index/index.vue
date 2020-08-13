@@ -73,7 +73,7 @@
 								<image src="../../static/images/carIcon.png" class="wh60"></image>
 							</view>
 							<view class="d-flex j-sb a-end">
-								<view class="colorR">￥<text class="font-38">126</text>/0.2kg</view>
+								<view class="colorR">￥<text class="font-48">126</text>/0.2kg</view>
 								<view class="color8 line-through font-34">156/KG</view>
 							</view>
 						</view>
@@ -160,15 +160,15 @@
 		<!-- footer -->
 		<view class="footer">
 			<view class="item on">
-				<image src="../../static/images/nabar1-a.png" mode=""></image>
+				<view class="footIcon"><image src="../../static/images/nabar1-a.png" class="onFootIcon"></image></view>
 				<view>商城</view>
 			</view>
 			<view class="item" @click="Router.redirectTo({route:{path:'/pages/car/car'}})">
-				<image src="../../static/images/nabar2.png" mode=""></image>
+				<view class="footIcon"><image src="../../static/images/nabar2.png" mode=""></image></view>
 				<view>购物车</view>
 			</view>
 			<view class="item" @click="Router.redirectTo({route:{path:'/pages/user/user'}})">
-				<image src="../../static/images/nabar3.png" mode=""></image>
+				<view class="footIcon"><image src="../../static/images/nabar3.png" mode=""></image></view>
 				<view>我的</view>
 			</view>
 		</view>

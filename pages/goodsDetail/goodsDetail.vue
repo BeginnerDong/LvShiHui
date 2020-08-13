@@ -9,7 +9,7 @@
 			</swiper>
 			
 			<view class="p-a bg-black ml-3 o4 radius-5 wh55" :style="{top:statusBar+10+'px'}" @click="Router.back({route:{path:-1}})">
-				<image src="../../static/images/back.png" class="back"></image>
+				<image src="../../static/images/detail-back.png" mode="widthFix"></image>
 			</view>
 			<view class="sign Mgb" v-show="type==0">省￥322/0.2kg</view>
 			<view class="dots">6/1</view>
@@ -59,7 +59,7 @@
 		</view>
 		
 		<view>
-			<view class="p-3 bg-f7">商品详情</view>
+			<view class="p-3 bg-f7 font-32">商品详情</view>
 			<view>
 				<image src="../../static/images/myPost.png" mode="widthFix"></image>
 			</view>
@@ -68,7 +68,7 @@
 		<view style="height: 150rpx;"></view>
 		<view class="p-fX bottom-0 z100 bg-white flex1 px-3 py-2 bT-f5">
 		  <button class="flex4 bg-white d-inline-block">
-			 <image src="../../static/images/detail-icon1.png" class="wh44 mb-2"></image>
+			 <image src="../../static/images/detail-icon1.png" class="wh44" style="margin-bottom: 8rpx;"></image>
 			 <view class="font-28 line-h">客服</view>
 		  </button>
 		  <view class="carBtn" v-show="type==0">加入购物车</view>

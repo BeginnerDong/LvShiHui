@@ -10,16 +10,16 @@
 		</view>
 		
 		<view class="p-aXY text-center">
-			<view class="p-a ml-3 z10 w-100" :style="{top:statusBar+10+'px'}" @click="Router.back({route:{path:-1}})">
-				<image src="../../static/images/back2.png" class="back mt-1"></image>
-				<view class="colorf font-36 font-w p-aXY">会员申请</view>
+			<view class="p-a z10 w-100" :style="{top:statusBar+10+'px'}" @click="Router.back({route:{path:-1}})">
+				<image src="../../static/images/back2.png" class="back mt-1 ml-4"></image>
+				<view class="colorf font-38 p-aXY">会员申请</view>
 			</view>
 			<view class="conTxt pl-3 colorY">
 				<view>预计每年可省11287.5元</view>
 				<view class="btnBox p-r">
 					<image src="../../static/images/vipBtn.png" mode="widthFix"></image>
 					<view class="p-aXY flex color8">
-						<view class="w-50 pl-4"><text class="price1">3998</text>/年</view>
+						<view class="w-50 pl-4 c1"><text class="price1">3998</text>/年</view>
 						<view class="w-50 font-36 colorG pl-3" @click="isShow">立即加入</view>
 					</view>
 				</view>
@@ -27,10 +27,11 @@
 		</view>
 		
 		<!-- 弹窗 -->
-		<view class="bg-mask" v-show="is_show">
-			<view class="p-aX bottom-0 maskBox">
+		<view class="bg-mask d-flex flex-column" v-show="is_show">
+			<view @click="isShow" class="flex-1"></view>
+			<view class="maskBox w-100">
 				<view class="p-r">
-					<image src="../../static/images/store-img2.png" mode="widthFix"></image>
+					<image src="../../static/images/card2.png" mode="widthFix"></image>
 					<view class="p-aXY text-center color0 txt">
 						<view class="font-32">铝实惠超级会员</view>
 						<view class="time font-32">（2020.07.09-2021.07.09）</view>
@@ -111,6 +112,7 @@ page{height: 100%;}
 <style scoped>
 .conTxt{padding-top: 585rpx;}
 .btnBox{width: 630rpx;height: 94rpx;margin: 323rpx auto 0;}
+.c1{color: #A28A60;}
 .price1{color: #2C2419;font-size: 56rpx;}
 .none{height: 100%;overflow: hidden;}
 

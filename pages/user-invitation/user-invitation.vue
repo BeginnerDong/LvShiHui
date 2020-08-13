@@ -30,6 +30,7 @@
 	export default {
 		data() {
 			return {
+				Router:this.$Router,
 				statusBar: app.globalData.statusBar
 			}
 		},
