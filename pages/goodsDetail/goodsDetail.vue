@@ -79,7 +79,8 @@
 		 
 		<!-- 规格 -->
 		<view class="bg-mask" v-show="gg_show">
-			<view class="bg-white radius40-T px-3 p-aX bottom-0 gg">
+			<view class="bg-white radius40-T px-3 p-aX bottom-0 gg" @click="Show('gg')">
+				<image src="../../static/images/detail-icon4.png" class="close"></image>
 				<view class="py-4 flex bB-f5">
 					<image src="../../static/images/detail-img.jpg" class="wh190 radius30"></image>
 					<view class="flex5 font-30 pl-3 py-1 ggtxt">
@@ -189,6 +190,6 @@ swiper-item image{width: 100%;height: 100%;}
 .ggtxt{height: 190rpx;}
 
 .btn{width: 690rpx;}
-
+.close{width: 42rpx;height: 42rpx;position: absolute;right: 30rpx;top: 30rpx;}
 
 </style>

@@ -33,7 +33,7 @@
 				<view class="p-r">
 					<image src="../../static/images/card2.png" mode="widthFix"></image>
 					<view class="p-aXY text-center color0 txt">
-						<view class="font-32">铝实惠超级会员</view>
+						<view class="font-32">铝实惠金牌会员</view>
 						<view class="time font-32">（2020.07.09-2021.07.09）</view>
 						<view><text class="price1 pri">3988</text>/年</view>
 					</view>
@@ -61,7 +61,7 @@
 					<image src="../../static/images/vip-icon3.png" mode="widthFix" class="txtImg"></image>
 					<view class="py-3 bB-e1 flex1">
 						<view class="color8">产品名称</view>
-						<view class="color3">铝实惠超级会员</view>
+						<view class="color3">铝实惠金牌会员</view>
 					</view>
 					<view class="py-3 bB-e1 flex1">
 						<view class="color8">会员时限</view>

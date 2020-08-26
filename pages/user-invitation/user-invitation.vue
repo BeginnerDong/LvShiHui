@@ -11,7 +11,7 @@
 				<image src="../../static/images/yq-img1.png" mode="widthFix"></image>
 				<view class="p-aXY text-center pt-4">
 					<view class="font-26 pt-4 pb-2">已邀请</view>
-					<view class="font-34 color3 font-w">超级会员 <text class="colorM">12</text> 人</view>
+					<view class="font-34 color3 font-w">金牌会员 <text class="colorM">12</text> 人</view>
 					<view class="btnAuto">累计收益：6000元</view>
 					
 					<view>我的邀请码</view>

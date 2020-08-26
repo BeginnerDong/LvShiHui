@@ -8,13 +8,13 @@
 		</view>
 		
 		<!-- 空数据 -->
-		<!-- <view>
+		<view>
 			<image src="../../static/images/coupon1.png" class="nullCoupon"></image>
 			<view class="font-34 color8 text-center">暂无优惠券</view>
-		</view> -->
+		</view>
 		
 		<!-- 有数据 -->
-		<view class="px-2 pt-2">
+		<!-- <view class="px-2 pt-2">
 			<view class="p-r">
 				<image src="../../static/images/coupon.png" mode="widthFix"></image>
 				<view class="flex1 p-aXY coupon">
@@ -38,7 +38,7 @@
 						<view class="btnM">已使用</view>
 					</view>
 				</view>
-		</view>
+		</view> -->
 		
 	</view>
 </template>

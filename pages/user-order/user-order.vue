@@ -13,7 +13,7 @@
 			<view class="flex1 pt-4 pb-3 bB-f5 mx-3 font-32">
 				<view class="flex">
 					<image src="../../static/images/order-icon1.png" class="dp-icon mr-1"></image>
-					<view>超级会员秒杀商品</view>
+					<view>金牌会员秒杀商品</view>
 				</view>
 				<view class="colorM font-30">买家代付款</view>
 			</view>
@@ -33,7 +33,7 @@
 			<view class="d-flex j-end a-center pb-3 px-3">
 				<view class="btn" @click="showToast">取消订单</view>
 				<view class="btn btn1 o3">付款</view>
-				<view class="btn btn1">付款</view>
+				<view class="btn btn1">确认收货</view>
 			</view>
 		</view>
 		

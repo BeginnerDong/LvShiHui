@@ -23,7 +23,7 @@
 				
 				<view class="p-r pt-4 px-3 flex1 vipCon1">
 					<view class="line-h">
-						<view class="font-40 colorf">超级会员</view>
+						<view class="font-40 colorf">金牌会员</view>
 						<view class="colorZ pt-2">8大尊贵特权</view>
 					</view>
 					<view class="vipBtn" 

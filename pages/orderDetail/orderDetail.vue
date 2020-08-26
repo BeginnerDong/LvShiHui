@@ -3,14 +3,14 @@
 		
 		<view class="bg-f7 bg-white font-32">
 			<!-- 未添加地址 -->
-			<!-- <view class="mx-3 p-3 bg-f7 flex1 radius20"
+			<view class="mx-3 p-3 bg-f7 flex1 radius20"
 			@click="Router.navigateTo({route:{path:'/pages/addAddress/addAddress'}})">
 				<image src="../../static/images/store-icon8.png" class="dw-icon mr-1"></image>
 				<view class="pl-2">添加收获地址</view>
 				<image src="../../static/images/store-icon10.png" class="r-icon"></image>
-			</view> -->
+			</view>
 			<!-- 已添加地址 -->
-			<view>
+			<!-- <view>
 				<view class="f720"></view>
 				<view class="px-3 py-4 bg-white flex1"
 				@click="Router.navigateTo({route:{path:'/pages/addAddress/addAddress'}})">
@@ -22,12 +22,12 @@
 					<image src="../../static/images/store-icon10.png" class="r-icon"></image>
 				</view>
 				<view class="f720"></view>
-			</view>
+			</view> -->
 			
 			<view class="flex1 pt-4 pb-3 bB-e1 mx-3">
 				<view class="flex">
 					<image src="../../static/images/order-icon1.png" class="dp-icon mr-1"></image>
-					<view>超级会员秒杀商品</view>
+					<view>金牌会员秒杀商品</view>
 				</view>
 				<view class="flex">
 					<image src="../../static/images/order-icon.png" class="wh30"></image>
@@ -57,7 +57,7 @@
 				</view>
 				
 				<view class="flex1 py-4 bB-e1 mx-3">
-					<view>购买数量</view>
+					<view>配送方式</view>
 					<view class="color3">快递 货到付款</view>
 				</view>
 				<view class="flex1 py-4 bB-e1 mx-3">

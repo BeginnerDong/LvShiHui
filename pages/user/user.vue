@@ -18,7 +18,7 @@
 				<image src="../../static/images/card3.png" class="bgImg"></image>
 				<view class="p-r pt-4 px-3 flex1 vipCon1">
 					<view class="line-h">
-						<view class="font-40 colorf">超级会员</view>
+						<view class="font-40 colorf">金牌会员</view>
 						<view class="colorZ pt-2">8大尊贵特权</view>
 					</view>
 					<view class="vipBtn"
@@ -125,6 +125,15 @@
 			</view>
 		</view>
 		
+		
+		<!-- 提示弹窗 -->
+		<view class="bg-mask" v-show="is_show">
+			<view class="maskBoxs p-aXY text-center font-34 flex4">
+				<view class="flex0 w-100 t1 flex-1"> 已提交 我们将在一个 工作日之内反馈审核结果 </view>
+				<view class="bT-e1 py-3 w-100 colorB">确定</view>
+			</view>
+		</view>
+		
 	</view>
 </template>
 
@@ -132,7 +141,8 @@
 	export default {
 		data() {
 			return {
-				Router:this.$Router
+				Router:this.$Router,
+				is_show:false
 			}
 		},
 		methods: {

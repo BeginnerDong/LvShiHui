@@ -7,7 +7,7 @@
 		</view>
 		
 		<view class="p-r pt-4 top">
-			<image src="../../static/images/store-img2.png" class="bgImg"></image>
+			<image src="../../static/images/card2.png" class="bgImg"></image>
 			
 			<view class="p-r pt-4 px-3 flex1 vipCon1">
 				<view class="font-40 colorf flex">
@@ -15,7 +15,7 @@
 					<view>吴彦祖</view>
 				</view>
 				<view class="line-h text-right">
-					<view class="font-40 colorf">VIP超级会员</view>
+					<view class="font-32 colorf">VIP金牌会员</view>
 					<view class="colorZ pt-2">365天后到期</view>
 				</view>
 			</view>
@@ -23,7 +23,7 @@
 			<view class="btnBox p-r">
 				<image src="../../static/images/vipBtn.png" mode="widthFix"></image>
 				<view class="p-aXY flex color8">
-					<view class="w-50 pl-4"><text class="price1">3998</text>/年</view>
+					<view class="w-50 pl-4 c1"><text class="price1">3998</text>/年</view>
 					<view class="w-50 font-36 colorG pl-3" @click="isShow">立即加入</view>
 				</view>
 			</view>
@@ -57,6 +57,7 @@
 page{background-color: #0B0E1A;}
 </style>
 <style scoped>
+.c1{color: #A28A60;}
 .line-h100{line-height: 100rpx;}
 .top{width: 630rpx;margin: 0 auto;}
 .bgImg{width: 630rpx;height: 340rpx;position: absolute;top: 0;bottom: 0;right: 0;left: 0; margin: 40rpx auto 0;}

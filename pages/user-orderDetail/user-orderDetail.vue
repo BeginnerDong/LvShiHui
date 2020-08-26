@@ -1,31 +1,31 @@
 <template>
 	<view>
 		<!-- 代付款 -->
-		<!-- <view class="p-3 Mgb flex1 colorf orderTop">
+		<view class="p-3 Mgb flex1 colorf orderTop" v-show="state==0">
 			<view class="line-h">
 				<view class="font-52 pb-2 font-w">买家代付款</view>
 				<view class="colorG">剩 <text class="colorf px-1">23:15:56</text> 订单将自动关闭</view>
 			</view>
 			<image src="../../static/images/order-icon3.png" class="icon1"></image>
-		</view> -->
+		</view>
 		<!-- 待发货 -->
-		<!-- <view class="p-3 Mgb flex1 colorf orderTop">
+		<view class="p-3 Mgb flex1 colorf orderTop" v-show="state==1">
 			<view class="line-h">
 				<view class="font-52 pb-2 font-w">等待卖家发货</view>
 				<view class="colorG">卖家将尽快为您发货 请耐心等待</view>
 			</view>
 			<image src="../../static/images/order-icon6.png" class="icon2"></image>
-		</view> -->
+		</view>
 		<!-- 待收货 -->
-		<!-- <view class="p-3 Mgb flex1 colorf orderTop">
+		<view class="p-3 Mgb flex1 colorf orderTop" v-show="state==2">
 			<view class="line-h">
 				<view class="font-52 pb-2 font-w">卖家已发货</view>
 				<view class="colorG">您的包裹已寄出 请注意查收~</view>
 			</view>
 			<image src="../../static/images/order-icon7.png" class="icon3"></image>
-		</view> -->
-		<!-- 待收货 -->
-		<view class="p-3 Mgb flex1 colorf orderTop">
+		</view>
+		<!-- 已收货 -->
+		<view class="p-3 Mgb flex1 colorf orderTop" v-show="state==3">
 			<view class="line-h">
 				<view class="font-52 pb-2 font-w">买家已收货</view>
 				<view class="colorG">合作愉快哦~</view>
@@ -34,8 +34,7 @@
 		</view>
 		
 		<view class="radius50-T overflow-h bg-f7 order">
-			<view class="px-3 py-4 mb-2 bg-white flex1"
-			@click="Router.navigateTo({route:{path:'/pages/addAddress/addAddress'}})">
+			<view class="px-3 py-4 mb-2 bg-white flex1">
 				<image src="../../static/images/order-icon2.png" class="dw-icon1 mr-3"></image>
 				<view class="dzTxt pl-3 p-r flex-1">
 					<view>马云 <text class="color8 pl-1">18547298634</text></view>
@@ -48,7 +47,7 @@
 				<view class="flex1 pt-4 pb-3 bB-f5 mx-3 font-32">
 					<view class="flex">
 						<image src="../../static/images/order-icon1.png" class="dp-icon mr-1"></image>
-						<view>超级会员秒杀商品</view>
+						<view>金牌会员秒杀商品</view>
 					</view>
 					<button class="flex bg-white line-h">
 						<image src="../../static/images/order-icon.png" class="wh30"></image>
@@ -99,7 +98,7 @@
 							<image src="../../static/images/order-icon5.png" class="wh30 ml-1"></image>
 						</view>
 					</view>
-					<view class="flex1 item">                <!-- 待收货展示 -->
+					<view class="flex1 item" v-show="state==2">                <!-- 待收货展示 -->
 						<view class="color8">物流单号</view>
 						<view class="flex">
 							<view>325148759658445584</view>
@@ -110,20 +109,20 @@
 						<view class="color8">支付方式</view>
 						<view>微信支付</view>
 					</view>
-					<view class="flex1 item">          <!-- 代付款展示 -->
+					<view class="flex1 item" v-show="state==0">          <!-- 代付款展示 -->
 						<view class="color8">创建时间</view>
 						<view>2020-03-05 19:56:52</view>
 					</view>
 					
-					<view class="flex1 item">          <!-- 待发货、待收货展示 -->
+					<view class="flex1 item" v-show="state==2||state==1">          <!-- 待发货、待收货展示 -->
 						<view class="color8">付款时间</view>
 						<view>2020-03-05 19:56:52</view>
 					</view>
-					<view class="flex1 item">           <!-- 待收货展示 -->
+					<view class="flex1 item" v-show="state==2">           <!-- 待收货展示 -->
 						<view class="color8">发货时间</view>
 						<view>2020-03-05 19:56:52</view>
 					</view>
-					<view class="flex1 item">           <!-- 已收货展示 -->
+					<view class="flex1 item" v-show="state==3">           <!-- 已收货展示 -->
 						<view class="color8">收货时间</view>
 						<view>2020-03-05 19:56:52</view>
 					</view>
@@ -133,16 +132,16 @@
 			
 		</view>
 		
-		<view style="height: 134rpx;"></view>
+		<view style="height: 134rpx;" v-show="state==0||state==2"></view>
 		<!-- 代付款 -->
-		<view class="bT-e1 px-3 bg-white flex1 p-fX bottom-0">
+		<view class="bT-e1 px-3 bg-white flex1 p-fX bottom-0" v-show="state==0">
 			<view class="btnB">取消订单</view>
 			<view class="btnM">立即付款</view>
 		</view>
 		<!-- 待收货 -->
-		<!-- <view class="bT-e1 px-3 bg-white p-fX bottom-0">
+		<view class="bT-e1 px-3 bg-white p-fX bottom-0" v-show="state==2">
 			<view class="btnM btn1">确认收货</view>
-		</view> -->
+		</view>
 		
 	</view>
 </template>
@@ -151,7 +150,7 @@
 	export default {
 		data() {
 			return {
-				
+				state:2
 			}
 		},
 		methods: {
