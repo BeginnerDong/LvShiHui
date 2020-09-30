@@ -12,12 +12,29 @@
 			    //计算得到定义的状态栏高度
 			  }
 			})
+			console.log('onLaunch',uni.getStorageSync('canClick'))
+			if(uni.getStorageSync('user_token')){
+				this.globalData.isLogin  =  true
+			}else{
+				this.globalData.isLogin  =  false
+			}
 		},
+		
 		onShow: function() {
 			console.log('App Show')
+			if(uni.getStorageSync('user_token')){
+				this.globalData.isLogin  =  true
+			}else{
+				this.globalData.isLogin  =  false
+			}
 		},
 		onHide: function() {
 			console.log('App Hide')
+			if(uni.getStorageSync('user_token')){
+				this.globalData.isLogin  =  true
+			}else{
+				this.globalData.isLogin  =  false
+			}
 		}
 	}
 </script>

@@ -122,9 +122,9 @@ input{font-size: 24rpx;flex: 1;padding-left: 20rpx;}
 
 /* 商品瀑布流 */
 .goodsBox{column-count: 2;column-gap: 26rpx;column-width: 332rpx;}
-.goods{width: 332rpx;display: block;break-inside: avoid;}
+.goods{width: 332rpx;display: block}
 
-
+.goods image{height:360rpx}
 /* 商店 */
 .yxImg{width: 220rpx;height: 160rpx;}
 .yxTxt{height: 160rpx;}

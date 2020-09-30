@@ -5,9 +5,9 @@
 			<view class="font-30 pt-3 pb-28">证件类型</view>
 			<view class="font-34 pb-4 bB-f5">身份证</view>
 			<view class="font-30 pt-3 pb-28">姓名</view>
-			<view class="font-34 pb-4 bB-f5">吴*祖</view>
+			<view class="font-34 pb-4 bB-f5">{{userInfoData.name?userInfoData.name:''}}</view>
 			<view class="font-30 pt-3 pb-28">证件号码</view>
-			<view class="font-34 pb-4 bB-f5">310****5235</view>
+			<view class="font-34 pb-4 bB-f5">{{userInfoData.idCard ?userInfoData.idCard :''}}</view>
 		</view>
 		
 	</view>
@@ -17,11 +17,26 @@
 	export default {
 		data() {
 			return {
-				
+				userInfoData:{}
 			}
 		},
+		onLoad() {
+			const self = this;
+			self.$Utils.loadAll(['getUserInfoData'], self);
+		},
 		methods: {
-			
+			getUserInfoData() {
+				const self = this;
+				const postData = {};
+				postData.tokenFuncName = 'getProjectToken';
+				postData.noLoading = true;
+				const callback = (res) => {
+					if (res.info.data.length > 0) {
+						self.userInfoData = res.info.data[0];
+					};
+				};
+				self.$apis.userInfoGet(postData, callback);
+			},
 		}
 	}
 </script>

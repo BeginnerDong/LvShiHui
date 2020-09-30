@@ -363,7 +363,7 @@ class Token {
                             var time = parseInt(new Date().getTime()) + 3500000; 
                             uni.setStorageSync('token_expire_time',time);
 							uni.setStorageSync('token_get_time',0);
-                            
+							getApp().globalData.isLogin =  true
                             if(callback){
                                 callback && callback(res.data.token);
                             };      

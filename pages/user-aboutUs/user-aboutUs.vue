@@ -1,12 +1,15 @@
 <template>
 	<view class="h-100">
 		<view class="h-100">
-			<view class="txt">
-				上传图片大海报
+			<view style="width: 100%;">
+				<image mode="widthFix" style="width: 100%;" v-for="(item,index) in mainData.mainImg" :key="index" :src="item.url"></image>
 			</view>
-			<view class="btnAuto">加入会员</view>
+			
+			<view class="p-fX bottom-0">
+				<view class="btnAuto" @click="phoneCall()">了解更多</view>
+				<!-- <view class="btnAuto">了解更多</view> -->
+			</view>
 		</view>
-		
 	</view>
 </template>
 
@@ -14,11 +17,36 @@
 	export default {
 		data() {
 			return {
-				
+				mainData:[]
 			}
 		},
+		onLoad() {
+			const self = this;
+			self.$Utils.loadAll(['getMainData'], self);
+		},
 		methods: {
+			getMainData() {
+				const self = this;
+				const postData = {};
+				postData.searchItem = {
+					thirdapp_id: 2,
+					menu_id: 4
+				};
+				const callback = (res) => {
+					if (res.info.data.length > 0) {
+						self.mainData = res.info.data[0]
+					}
+					self.$Utils.finishFunc('getMainData');
+				};
+				self.$apis.articleGet(postData, callback);
+			},
 			
+			phoneCall(){
+				const self = this;
+				uni.makePhoneCall({
+					phoneNumber:self.mainData.phone
+				})
+			},
 		}
 	}
 </script>

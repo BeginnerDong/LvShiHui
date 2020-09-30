@@ -5,7 +5,7 @@
 			<image src="../../static/images/my-img3.png" mode="widthFix"></image>
 			<view class="topTxt p-aX">
 				<view class="font-40 pb-3">总资产 <text class="color8">（推广佣金+买铝返钱）</text></view>
-				<view class="font-60 font-w price">10000.00</view>
+				<view class="font-60 font-w price">{{compute.all?compute.all:0}}</view>
 			</view>
 		</view>
 		
@@ -17,13 +17,13 @@
 				</view>
 				<view class="flex1">
 					<view class="d-flex flex-column a-start">
-						<view class="font-26 color8 pb-2">总金额</view><view class="price">6000</view>
+						<view class="font-26 color8 pb-2">总金额</view><view class="price">{{compute.tg?compute.tg:0}}</view>
 					</view>
 					<view class="d-flex flex-column a-center">
-						<view class="font-26 color8 pb-2">已发放</view><view class="price">3000</view>
+						<view class="font-26 color8 pb-2">已发放</view><view class="price">{{-compute.tgHas?-compute.tgHas:0}}</view>
 					</view>
 					<view class="d-flex flex-column a-end">
-						<view class="font-26 color8 pb-2">未发放</view><view class="price">3000</view>
+						<view class="font-26 color8 pb-2">未发放</view><view class="price">{{tgCan}}</view>
 					</view>
 				</view>
 			</view>
@@ -35,13 +35,13 @@
 				</view>
 				<view class="flex1">
 					<view class="d-flex flex-column a-start">
-						<view class="font-26 color8 pb-2">总金额</view><view class="price">4000</view>
+						<view class="font-26 color8 pb-2">总金额</view><view class="price">{{compute.ml?compute.ml:0}}</view>
 					</view>
 					<view class="d-flex flex-column a-center">
-						<view class="font-26 color8 pb-2">已发放</view><view class="price">3000</view>
+						<view class="font-26 color8 pb-2">已发放</view><view class="price">{{-compute.mlHas?-compute.mlHas:0}}</view>
 					</view>
 					<view class="d-flex flex-column a-end">
-						<view class="font-26 color8 pb-2">未发放</view><view class="price">1000</view>
+						<view class="font-26 color8 pb-2">未发放</view><view class="price">{{mlCan}}</view>
 					</view>
 				</view>
 			</view>
@@ -54,10 +54,66 @@
 	export default {
 		data() {
 			return {
-				Router:this.$Router
+				Router:this.$Router,
+				compute:{},
+				tgCan:0,
+				mlCan:0
 			}
 		},
+		onLoad() {
+			const self = this;
+			//self.paginate = self.$Utils.cloneForm(self.$AssetsConfig.paginate);
+			self.$Utils.loadAll(['getFlowLogData'], self);
+		},
 		methods: {
+			
+			getFlowLogData() {
+				const self = this;
+				const postData = {};
+				postData.tokenFuncName = 'getProjectToken';
+				postData.searchItem = {
+					thirdapp_id:2,
+					type:['in',[2,3]]
+				};
+				postData.noLoading = true;
+				postData.compute = {
+				  tg:[
+					'sum',
+					'count',
+					{user_no:wx.getStorageSync('user_info').user_no,type:3,count:['>',0],status:1}
+				  ],
+				  tgHas:[
+					'sum',
+					'count',
+					{user_no:wx.getStorageSync('user_info').user_no,type:3,count:['<',0],status:1}
+				  ],
+				  ml:[
+					'sum',
+					'count',
+					{user_no:wx.getStorageSync('user_info').user_no,type:2,count:['>',0],status:1}  
+				  ],
+				  mlHas:[
+					'sum',
+					'count',
+					{user_no:wx.getStorageSync('user_info').user_no,type:2,count:['<',0],status:1}
+				  ],
+				  all:[
+					'sum',
+					'count',
+					{user_no:wx.getStorageSync('user_info').user_no,type:['in',[2,3]],count:['>',0],status:1}  
+				  ],
+
+				};
+				const callback = (res) => {
+					if (res.info.data.length > 0) {
+						self.flowLogData = res.info.data;
+						self.compute = res.info.compute;
+						self.tgCan = self.compute.tg + self.compute.tgHas;
+						self.mlCan = self.compute.ml + self.compute.mlHas
+					};
+				};
+				self.$apis.flowLogGet(postData, callback);
+			},
 			
 		}
 	}
