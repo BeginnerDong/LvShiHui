@@ -121,7 +121,7 @@
 				const self = this;
 				delete self.searchItem.category_id;
 				if(self.keywords==''){
-					self.$Utils.showToast('请输入关键词搜索')
+					self.$Utils.showToast('请输入关键词搜索','none')
 				}else{
 					self.searchItem.title = ['LIKE',['%'+self.keywords+'%']]
 					self.getMainData(true)
@@ -173,7 +173,11 @@
 				var callback = function(res) {
 					if (res.info.data.length > 0) {
 						self.mainData.push.apply(self.mainData, res.info.data);
-					};
+					}else{
+						if(self.type=='search'){
+							self.$Utils.showToast('未搜索到相关产品','none')
+						}
+					}
 					//self.$Utils.finishFunc('getMainData');
 				};
 				self.$apis.productGet(postData, callback);

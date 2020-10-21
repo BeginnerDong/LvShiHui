@@ -12,7 +12,7 @@
 					<view class="font-34 pb-3 line-h" @click="choose(index)">{{item.name}} <text class="font-30 color8 pl-3">{{item.phone}}</text></view>
 					<view class="font-30 color8 bB-f5 pb-3">{{item.city+item.detail}}</view>
 					<view class="flex1 pt-3 line-h">
-						<view class="flex colorM">
+						<view class="flex colorM" :data-id="item.id" @click="updateAddress($event.currentTarget.dataset.id)">
 							<image :src="item.isdefault==1?'../../static/images/add2.png':'../../static/images/add1.png'" class="wh30 mr-1"></image>
 							<view>{{item.isdefault==1?'已设为默认':'设为默认'}}</view>
 						</view>

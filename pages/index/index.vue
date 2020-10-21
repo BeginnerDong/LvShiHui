@@ -213,7 +213,8 @@
 				less:0,
 				vip_show:false,
 				currentCity:'',
-				isLogin:app.globalData.isLogin
+				isLogin:app.globalData.isLogin,
+				addressData:{}
 			}
 		},
 		onLoad() {
@@ -241,10 +242,11 @@
 			clearInterval(self.interval)
 			self.getUserData();
 			if(uni.getStorageSync('chooseProvince')&&uni.getStorageSync('hasChoose')){
-				uni.removeStorageSync('chooseProvince');
-				uni.removeStorageSync('hasChoose');
+				
 				self.city = uni.getStorageSync('chooseProvince');
 				self.getLabelData(uni.getStorageSync('chooseProvince'))
+				uni.removeStorageSync('chooseProvince');
+				uni.removeStorageSync('hasChoose');
 			}
 		},
 		

@@ -3,8 +3,8 @@
 		<!-- 代付款 -->
 		<view class="p-3 Mgb flex1 colorf orderTop" v-show="mainData.pay_status==0">
 			<view class="line-h">
-				<view class="font-52 pb-2 font-w">买家代付款</view>
-				<view class="colorG">剩 <text class="colorf px-1">23:15:56</text> 订单将自动关闭</view>
+				<view class="font-52 pb-2 font-w">买家待付款</view>
+				<!-- <view class="colorG">剩 <text class="colorf px-1">23:15:56</text> 订单将自动关闭</view> -->
 			</view>
 			<image src="../../static/images/order-icon3.png" class="icon1"></image>
 		</view>
@@ -59,7 +59,7 @@
 					<image :src="mainData.orderItem&&mainData.orderItem[0]&&mainData.orderItem[0].snap_product
 				&&mainData.orderItem[0].snap_product.product&&mainData.orderItem[0].snap_product.product.mainImg
 				&&mainData.orderItem[0].snap_product.product.mainImg[0]?mainData.orderItem[0].snap_product.product.mainImg[0].url:''" class="wh190 radius30"></image>
-					<view class="flex5 font-28 pl-2 py-1 flex-1 ggtxt">
+					<view class="flex5 font-28 pl-2 py-1 flex-1 ggtxt" style="height: 190rpx;">
 						<view class="avoidOverflow2">{{mainData.orderItem&&mainData.orderItem[0]&&mainData.orderItem[0].snap_product
 				&&mainData.orderItem[0].snap_product.product?mainData.orderItem[0].snap_product.product.title:''}}</view>
 						<view class="color8">{{mainData.sku&&mainData.sku[0]?mainData.sku[0].title:''}}</view>
@@ -98,14 +98,14 @@
 						<view class="color8">订单编号</view>
 						<view class="flex">
 							<view>{{mainData.order_no?mainData.order_no:''}}</view>
-							<image src="../../static/images/order-icon5.png" class="wh30 ml-1"></image>
+							<image @click="copy(mainData.order_no)" src="../../static/images/order-icon5.png" class="wh30 ml-1"></image>
 						</view>
 					</view>
 					<view class="flex1 item" v-show="mainData.transport_status>0">                <!-- 待收货展示 -->
 						<view class="color8">物流单号</view>
 						<view class="flex">
 							<view>{{mainData.express_info?mainData.express_info:''}}</view>
-							<image src="../../static/images/order-icon5.png" class="wh30 ml-1"></image>
+							<image @click="copy(mainData.express_info)" src="../../static/images/order-icon5.png" class="wh30 ml-1"></image>
 						</view>
 					</view>
 					<view class="flex1 item">
@@ -119,15 +119,15 @@
 					
 					<view class="flex1 item" v-show="mainData.pay_status==1">          <!-- 待发货、待收货展示 -->
 						<view class="color8">付款时间</view>
-						<view>{{Utils.timeto(item.pay_time*1000,'ymd-hms')}}</view>
+						<view>{{Utils.timeto(mainData.pay_time*1000,'ymd-hms')}}</view>
 					</view>
 					<view class="flex1 item" v-show="mainData.transport_status>0">           <!-- 待收货展示 -->
 						<view class="color8">发货时间</view>
-						<view>{{Utils.timeto(item.deliver_time*1000,'ymd-hms')}}</view>
+						<view>{{Utils.timeto(mainData.deliver_time*1000,'ymd-hms')}}</view>
 					</view>
 					<view class="flex1 item" v-show="mainData.transport_status>2">           <!-- 已收货展示 -->
 						<view class="color8">收货时间</view>
-						<view>{{Utils.timeto(item.receive_time*1000,'ymd-hms')}}</view>
+						<view>{{Utils.timeto(mainData.receive_time*1000,'ymd-hms')}}</view>
 					</view>
 					
 				</view>
@@ -165,6 +165,13 @@
 			self.$Utils.loadAll(['getMainData'], self);
 		},
 		methods: {
+			
+			copy(content){
+				const self = this;
+				uni.setClipboardData({
+					data:content
+				})
+			},
 			
 			goPay() {
 				const self = this;	

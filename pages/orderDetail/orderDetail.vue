@@ -20,7 +20,7 @@
 			<view class="mx-3 p-3 bg-f7 flex1 radius20" v-else
 			@click="Router.navigateTo({route:{path:'/pages/address/address'}})">
 				<image src="../../static/images/store-icon8.png" class="dw-icon mr-1"></image>
-				<view class="pl-2">添加收获地址</view>
+				<view class="pl-2">添加收货地址</view>
 				<image src="../../static/images/store-icon10.png" class="r-icon"></image>
 			</view>
 			
